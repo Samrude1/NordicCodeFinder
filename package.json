@@ -1,0 +1,20 @@
+{
+  "name": "devcamper_api",
+  "version": "1.0.0",
+  "description": "devcamper backend API",
+  "license": "MIT",
+  "author": "Sami Rautanen",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node server",
+    "dev": "cross-env NODE_ENV=development nodemon server"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "^10.0.0"
+  }
+}
