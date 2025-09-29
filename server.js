@@ -7,6 +7,7 @@ const colors = require("colors");
 const fileupload = require("express-fileupload");
 const errorHandler = require("./middleware/error");
 const cookieParser = require("cookie-parser");
+const securityMiddleware = require("./middleware/security");
 
 // Ladataan ympäristömuuttujat config.env-tiedostosta
 dotenv.config({ path: "./config/config.env" });
@@ -28,6 +29,9 @@ app.use(express.json());
 
 // Cookie parser
 app.use(cookieParser());
+
+// Security middleware – Helmet, RateLimit, CORS jne.
+securityMiddleware(app);
 
 // Dev logging middleware
 if (process.env.NODE_ENV === "development") {

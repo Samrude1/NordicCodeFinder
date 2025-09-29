@@ -85,7 +85,7 @@ exports.updateReview = asyncHandler(async (req, res, next) => {
   review.text = req.body.text || review.text;
   review.rating = req.body.rating || review.rating;
 
-  // Save document → trigger post("save") hook → keskiarvo päivittyy
+  // Save document -> trigger post("save") hook -> keskiarvo päivittyy
   await review.save();
 
   res.status(200).json({
