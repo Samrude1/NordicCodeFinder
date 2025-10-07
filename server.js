@@ -44,6 +44,8 @@ app.use(fileupload());
 // set static folder
 app.use(express.static(path.join(__dirname, "public")));
 
+app.set("json spaces", 2); // Pretty print JSON responses
+
 // Mount routers
 app.use("/api/v1/bootcamps", bootcamps);
 app.use("/api/v1/courses", courses);
