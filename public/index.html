@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DevCamper API (2025)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>DevCamper API (2025)</h1>
+      <p class="description">
+        Live backend API with Node.js, Express & MongoDB. Test endpoints or
+        explore documentation below!
+      </p>
+    </header>
+
+    <section class="stack">
+      <h3>Tech Stack</h3>
+      <span>Node.js</span>
+      <span>Express</span>
+      <span>MongoDB</span>
+      <span>JWT Auth</span>
+      <span>Helmet</span>
+      <span>XSS Clean</span>
+      <span>CORS</span>
+    </section>
+
+    <section class="links">
+      <div class="endpoint-card">
+        <a href="/api/v1/bootcamps" class="button">View Bootcamps API</a>
+        <span class="status" id="bootcamps-status">Checking...</span>
+      </div>
+      <div class="endpoint-card">
+        <a href="/api/v1/courses" class="button">View Courses API</a>
+        <span class="status" id="courses-status">Checking...</span>
+      </div>
+      <div class="endpoint-card">
+        <a
+          href="https://documenter.getpostman.com/view/40486758/2sB3QJNW9T"
+          target="_blank"
+          class="button"
+          >Postman Docs</a
+        >
+        <span class="status" id="docs-status">Checking...</span>
+      </div>
+    </section>
+
+    <footer>&copy; 2025 DevCamper API. Hosted on Render.com.</footer>
+
+    <script>
+      async function checkStatus(id, url) {
+        const el = document.getElementById(id);
+        try {
+          const res = await fetch(url);
+          if (res.ok) {
+            el.textContent = "OK";
+            el.style.color = "green";
+          } else {
+            el.textContent = "Error";
+            el.style.color = "red";
+          }
+        } catch (e) {
+          el.textContent = "Error";
+          el.style.color = "red";
+        }
+      }
+
+      // Tarkistetaan status sivun latauksessa
+      checkStatus("bootcamps-status", "/api/v1/bootcamps");
+      checkStatus("courses-status", "/api/v1/courses");
+      // Docs-linkille voidaan tehdä sama tarkistus jos halutaan, mutta usein vain OK
+      const docsEl = document.getElementById("docs-status");
+      docsEl.textContent = "OK";
+      docsEl.style.color = "green";
+    </script>
+  </body>
+</html>
