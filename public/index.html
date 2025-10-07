@@ -66,8 +66,15 @@
       }
 
       // Tarkistetaan status sivun latauksessa
-      checkStatus("bootcamps-status", "/api/v1/bootcamps");
-      checkStatus("courses-status", "/api/v1/courses");
+      checkStatus(
+        "bootcamps-status",
+        "https://bootcampfinder.onrender.com/api/v1/bootcamps"
+      );
+      checkStatus(
+        "courses-status",
+        "https://bootcampfinder.onrender.com/api/v1/courses"
+      );
+
       // Docs-linkille voidaan tehdä sama tarkistus jos halutaan, mutta usein vain OK
       const docsEl = document.getElementById("docs-status");
       docsEl.textContent = "OK";
