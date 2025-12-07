@@ -9,12 +9,15 @@
   --font-family: 'Outfit', sans-serif;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
   font-family: var(--font-family);
   background-color: var(--bg-dark);
   color: var(--text-main);
-  overflow-x: hidden;
   line-height: 1.6;
 }
 
@@ -533,22 +536,28 @@ footer {
 
   .nav-links {
     position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
     background: rgba(10, 10, 10, 0.98);
     backdrop-filter: blur(10px);
     flex-direction: column;
-    padding: 5rem 2rem 2rem;
+    padding: 2rem;
     gap: 1.5rem;
-    transition: right 0.3s ease;
-    border-left: 1px solid var(--border);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+    border-radius: 16px;
     z-index: 100;
+    visibility: hidden;
+    opacity: 0;
   }
 
   .nav-links.active {
-    right: 0;
+    transform: translateX(-50%);
+    visibility: visible;
+    opacity: 1;
   }
 
   .nav-btn,
@@ -677,14 +686,17 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(5px);
-  z-index: 1000;
+  z-index: 2000;
   display: none;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
   opacity: 0;
   transition: opacity 0.3s ease;
+  box-sizing: border-box;
+  /* Ensure padding doesn't affect width */
 }
 
 .modal-overlay.active {
@@ -695,13 +707,26 @@ footer {
 .modal-content {
   background: #111;
   border: 1px solid var(--border);
-  width: 90%;
+  width: 100%;
+  /* Take full width of parent (which has padding) */
   max-width: 800px;
-  max-height: 90vh;
+  max-height: 85vh;
   border-radius: 16px;
   position: relative;
   overflow-y: auto;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  /* Force centering */
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 100%;
+    max-height: 80vh;
+    border-radius: 12px;
+  }
 }
 
 .close-modal {
@@ -714,6 +739,16 @@ footer {
   font-size: 2rem;
   cursor: pointer;
   z-index: 10;
+  line-height: 1;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .close-modal {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.75rem;
+  }
 }
 
 /* Auth Pages Styles */
@@ -931,6 +966,12 @@ footer {
   padding: 2rem;
 }
 
+@media (max-width: 768px) {
+  .modal-body {
+    padding: 1.5rem 1rem;
+  }
+}
+
 /* Modal Content Styles */
 .modal-hero {
   border-bottom: 1px solid var(--border);
@@ -941,6 +982,13 @@ footer {
 .modal-title {
   font-size: 2.5rem;
   margin: 0 0 0.5rem;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .modal-title {
+    font-size: 1.75rem;
+  }
 }
 
 .modal-badge {
@@ -955,10 +1003,22 @@ footer {
 .modal-desc {
   color: #ddd;
   line-height: 1.7;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .modal-desc {
+    font-size: 0.95rem;
+  }
 }
 
 .modal-stats {
   margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .modal-cost {
@@ -972,6 +1032,9 @@ footer {
 
 .modal-skills {
   margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .course-list {
@@ -990,20 +1053,39 @@ footer {
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .course-title {
   font-weight: bold;
   font-size: 1.1rem;
+  word-wrap: break-word;
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .course-title {
+    font-size: 1rem;
+  }
 }
 
 .course-cost {
   color: #4ade80;
+  white-space: nowrap;
 }
 
 .course-details {
   font-size: 0.9rem;
   color: #ccc;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .course-details {
+    font-size: 0.85rem;
+  }
 }
 
 /* Pagination */
