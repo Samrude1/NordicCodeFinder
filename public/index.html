@@ -24,9 +24,14 @@
     <div class="logo">
       <i class="fas fa-laptop-code"></i> DevCamper
     </div>
-    <div class="nav-links">
-      <a href="login.html" class="nav-btn-text" style="text-decoration:none;">Log In</a>
-      <a href="register.html" class="nav-btn-primary" style="text-decoration:none;">Register</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="login.html" class="nav-btn-text">Log In</a>
+      <a href="register.html" class="nav-btn-primary">Register</a>
       <a href="https://documenter.getpostman.com/view/40486758/2sB3QJNW9T" target="_blank" class="nav-btn">
         <i class="fas fa-book"></i> API Docs
       </a>
@@ -88,7 +93,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2025 DevCamper API. Built with <i class="fas fa-heart" style="color: #e25555;"></i> and Node.js.</p>
+    <p>&copy; 2025 DevCamper API. Built with <i class="fas fa-heart heart-icon"></i> and Node.js.</p>
   </footer>
 
   <script src="js/app.js"></script>

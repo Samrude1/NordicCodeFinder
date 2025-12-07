@@ -15,6 +15,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('bootcamp-grid');
   const reviewsGrid = document.getElementById('reviews-grid');
 
+  // Hamburger Menu Toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+  }
+
   // Fetch Bootcamps (now includes courses and reviews)
   fetchBootcamps();
 
@@ -113,7 +140,10 @@ function renderPagination(pagination, container) {
     const prevBtn = document.createElement('button');
     prevBtn.className = 'nav-btn pagination-btn';
     prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i> Prev';
-    const debouncedPrev = debounce(() => window.fetchBootcamps(pagination.prev.page), 300);
+    const debouncedPrev = debounce(() => {
+      window.fetchBootcamps(pagination.prev.page);
+      scrollToBootcamps();
+    }, 300);
     prevBtn.addEventListener('click', debouncedPrev);
     container.appendChild(prevBtn);
   }
@@ -122,9 +152,19 @@ function renderPagination(pagination, container) {
     const nextBtn = document.createElement('button');
     nextBtn.className = 'nav-btn pagination-btn';
     nextBtn.innerHTML = 'Next <i class="fas fa-chevron-right"></i>';
-    const debouncedNext = debounce(() => window.fetchBootcamps(pagination.next.page), 300);
+    const debouncedNext = debounce(() => {
+      window.fetchBootcamps(pagination.next.page);
+      scrollToBootcamps();
+    }, 300);
     nextBtn.addEventListener('click', debouncedNext);
     container.appendChild(nextBtn);
+  }
+}
+
+function scrollToBootcamps() {
+  const sectionHeader = document.querySelector('.section-header');
+  if (sectionHeader) {
+    sectionHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
 
@@ -161,6 +201,17 @@ function updateNavbarForLoggedInUser(user) {
 
   // Add logout handler
   document.getElementById('logout-btn').addEventListener('click', handleLogout);
+
+  // Re-attach hamburger menu close handlers for new links
+  const hamburger = document.getElementById('hamburger');
+  if (hamburger) {
+    navLinks.querySelectorAll('a, button').forEach(element => {
+      element.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+  }
 }
 
 async function handleLogout() {
@@ -327,7 +378,7 @@ window.openDetails = (id) => {
     <div class="modal-hero">
       <h2 class="modal-title">${bootcamp.name}</h2>
       <div class="modal-stats">
-        <span class="rating-badge" style="margin-right: 1rem;">
+        <span class="rating-badge modal-rating-badge">
           <i class="fas fa-star"></i> ${bootcamp.averageRating ? bootcamp.averageRating.toFixed(1) : 'N/A'}
         </span>
         <span class="modal-cost">

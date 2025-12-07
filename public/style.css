@@ -49,6 +49,38 @@ body {
   color: var(--text-main);
 }
 
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 101;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-main);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
 .nav-btn {
   text-decoration: none;
   color: var(--text-main);
@@ -490,6 +522,43 @@ footer {
   .grid-layout {
     grid-template-columns: 1fr;
   }
+
+  .navbar {
+    padding: 1rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    padding: 5rem 2rem 2rem;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+    border-left: 1px solid var(--border);
+    z-index: 100;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-btn,
+  .nav-btn-text,
+  .nav-btn-primary {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+  }
 }
 
 /* Nav Buttons */
@@ -497,6 +566,7 @@ footer {
   display: flex;
   gap: 1rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav-btn-text {
@@ -507,6 +577,7 @@ footer {
   font-family: inherit;
   font-size: 1rem;
   transition: color 0.3s;
+  text-decoration: none;
 }
 
 .nav-btn-text:hover {
@@ -523,6 +594,7 @@ footer {
   font-family: inherit;
   font-weight: 600;
   transition: background 0.3s;
+  text-decoration: none;
 }
 
 .nav-btn-primary:hover {
@@ -835,6 +907,16 @@ footer {
   color: #888;
 }
 
+/* Back to home link */
+.back-to-home {
+  color: #666;
+}
+
+/* Heart icon */
+.heart-icon {
+  color: #e25555;
+}
+
 @media (max-width: 768px) {
   .login-wrapper {
     grid-template-columns: 1fr;
@@ -882,6 +964,10 @@ footer {
 .modal-cost {
   color: #4ade80;
   font-weight: bold;
+}
+
+.modal-rating-badge {
+  margin-right: 1rem;
 }
 
 .modal-skills {
