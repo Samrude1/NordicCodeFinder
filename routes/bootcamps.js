@@ -30,7 +30,7 @@ router
 
 router
   .route("/")
-  .get(advancedResults(Bootcamp, "courses"), getBootcamps)
+  .get(advancedResults(Bootcamp, "courses reviews"), getBootcamps)
   .post(protect, authorize("publisher", "admin"), createBootcamp);
 
 router

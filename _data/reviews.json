@@ -62,5 +62,47 @@
     "rating": "7",
     "bootcamp": "5d725a1b7b292f5f8ceff788",
     "user": "5c8a1d5b0190b214360dc040"
+  },
+  {
+    "title": "Amazing AI Course",
+    "text": "The Quantum Coding bootcamp completely transformed my career. Highly recommend!",
+    "rating": 10,
+    "bootcamp": "5d725a037b292f5f8ceff789",
+    "user": "5c8a1d5b0190b214360dc031"
+  },
+  {
+    "title": "Great Design Principles",
+    "text": "Pixel Perfect Design taught me how to think like a designer.",
+    "rating": 9,
+    "bootcamp": "5d725a037b292f5f8ceff790",
+    "user": "5c8a1d5b0190b214360dc032"
+  },
+  {
+    "title": "Solid DevOps Training",
+    "text": "Cloud Native Academy is the real deal for Kubernetes and AWS.",
+    "rating": 9,
+    "bootcamp": "5d725a037b292f5f8ceff791",
+    "user": "5c8a1d5b0190b214360dc033"
+  },
+  {
+    "title": "Mobile building blocks",
+    "text": "Good start for mobile dev, but wished for more advanced topics.",
+    "rating": 7,
+    "bootcamp": "5d725a037b292f5f8ceff792",
+    "user": "5c8a1d5b0190b214360dc034"
+  },
+  {
+    "title": "Security Experts",
+    "text": "Cyber Defender has the best instructors in the industry.",
+    "rating": 10,
+    "bootcamp": "5d725a037b292f5f8ceff793",
+    "user": "5c8a1d5b0190b214360dc035"
+  },
+  {
+    "title": "For Seniors Only",
+    "text": "Agile Architects is great but you need experience first.",
+    "rating": 8,
+    "bootcamp": "5d725a037b292f5f8ceff794",
+    "user": "5c8a1d5b0190b214360dc036"
   }
 ]

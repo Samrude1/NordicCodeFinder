@@ -1,49 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>DevCamper API (2025)</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Bootcamp Finder API (2025)</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevCamper API | Premium Bootcamp Catalog</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="background-glow"></div>
+
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fas fa-laptop-code"></i> DevCamper
+    </div>
+    <div class="nav-links">
+      <a href="login.html" class="nav-btn-text" style="text-decoration:none;">Log In</a>
+      <a href="register.html" class="nav-btn-primary" style="text-decoration:none;">Register</a>
+      <a href="https://documenter.getpostman.com/view/40486758/2sB3QJNW9T" target="_blank" class="nav-btn">
+        <i class="fas fa-book"></i> API Docs
+      </a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Find Your Future <span class="gradient-text">Bootcamp</span></h1>
       <p class="description">
-        Live backend API with Node.js, Express & MongoDB. Test endpoints or
-        explore documentation below!
+        Explore top-rated coding bootcamps, courses, and reviews through our powerful REST API.
+        Live data fetched directly from the backend.
       </p>
-    </header>
-
-    <section class="stack">
-      <h3>Tech Stack</h3>
-      <span>Node.js</span>
-      <span>Express</span>
-      <span>MongoDB</span>
-      <span>JWT Auth</span>
-      <span>Helmet</span>
-      <span>XSS Clean</span>
-      <span>CORS</span>
-    </section>
-
-    <section class="links">
-      <div class="endpoint-card">
-        <a href="/api/v1/bootcamps" class="button">View Bootcamps API</a>
+      <div class="stats-pills">
+        <span class="pill"><i class="fas fa-server"></i> Node.js</span>
+        <span class="pill"><i class="fas fa-database"></i> MongoDB</span>
+        <span class="pill"><i class="fas fa-shield-alt"></i> JWT Auth</span>
       </div>
-      <div class="endpoint-card">
-        <a href="/api/v1/courses" class="button">View Courses API</a>
-      </div>
-      <div class="endpoint-card">
-        <a
-          href="https://documenter.getpostman.com/view/40486758/2sB3QJNW9T"
-          target="_blank"
-          class="button"
-          >Postman Docs</a
-        >
-      </div>
-    </section>
+    </div>
+  </header>
 
-    <footer>
-      &copy; 2025 BootcampFinder API by Sami Rautanen. Hosted on Render.com.
-    </footer>
-  </body>
+  <main class="container">
+    <div class="section-header">
+      <h2>Featured Bootcamps</h2>
+      <div class="live-indicator">
+        <div class="dot"></div> Live Data
+      </div>
+    </div>
+
+    <!-- Dynamic Content Grid -->
+    <div id="bootcamp-grid" class="grid-layout">
+      <!-- JS will populate this -->
+      <div class="loading-spinner">
+        <i class="fas fa-circle-notch fa-spin"></i> Loading API data...
+      </div>
+    </div>
+
+    <!-- Pagination Controls -->
+    <div id="pagination-container" class="pagination-controls">
+      <!-- Buttons injected by JS -->
+    </div>
+    <!-- Reviews Section -->
+    <div class="section-header reviews-section-header">
+      <h2>What Students Say</h2>
+    </div>
+    <div id="reviews-grid" class="reviews-layout">
+      <!-- Reviews will be populated here -->
+    </div>
+  </main>
+
+  <!-- Modal for Details -->
+  <div id="bootcamp-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 DevCamper API. Built with <i class="fas fa-heart" style="color: #e25555;"></i> and Node.js.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+
 </html>

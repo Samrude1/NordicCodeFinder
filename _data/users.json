@@ -103,5 +103,47 @@
     "email": "sara@gmail.com",
     "role": "user",
     "password": "123456"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be050",
+    "name": "Alice Quant",
+    "email": "alice@quantum.com",
+    "role": "publisher",
+    "password": "123456"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be051",
+    "name": "Bob Pixel",
+    "email": "bob@pixel.com",
+    "role": "publisher",
+    "password": "123456"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be052",
+    "name": "Charlie Cloud",
+    "email": "charlie@cloud.com",
+    "role": "publisher",
+    "password": "123456"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be053",
+    "name": "David Mobile",
+    "email": "david@mobile.com",
+    "role": "publisher",
+    "password": "123456"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be054",
+    "name": "Eve Cyber",
+    "email": "eve@cyber.com",
+    "role": "publisher",
+    "password": "123456"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be055",
+    "name": "Frank Agile",
+    "email": "frank@agile.com",
+    "role": "publisher",
+    "password": "123456"
   }
 ]

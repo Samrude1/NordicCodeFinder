@@ -20,7 +20,7 @@ const BootcampSchema = new mongoose.Schema(
     website: {
       type: String,
       match: [
-        /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/,
+        /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/,
         "Please use a valid URL with HTTP or HTTPS",
       ],
     },
@@ -31,7 +31,7 @@ const BootcampSchema = new mongoose.Schema(
     email: {
       type: String,
       match: [
-        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/,
         "Please add a valid email",
       ],
     },
@@ -152,6 +152,14 @@ BootcampSchema.pre(
 // reverse populate with virtuals
 BootcampSchema.virtual("courses", {
   ref: "Course",
+  localField: "_id",
+  foreignField: "bootcamp",
+  justOne: false,
+});
+
+// Reverse populate with virtuals
+BootcampSchema.virtual("reviews", {
+  ref: "Review",
   localField: "_id",
   foreignField: "bootcamp",
   justOne: false,

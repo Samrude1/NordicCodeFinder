@@ -1,7 +1,7 @@
 # DevCamper API (2025)
 
 **Live Node.js & Express API with MongoDB**  
-A RESTful backend API project based on Brad Traversy's Node.js API Masterclass (Udemy), extended and customized with additional features, deployment, and styling.
+A RESTful backend API project, extended and customized with additional features, deployment, and styling.
 . Provides endpoints for bootcamps, courses, users, and reviews with authentication, authorization, and security best practices.
 
 ---

@@ -41,6 +41,9 @@ const importData = async () => {
     process.exit();
   } catch (err) {
     console.error(err);
+    if (err.errors) {
+      console.log(JSON.stringify(err.errors, null, 2).red);
+    }
   }
 };
 
