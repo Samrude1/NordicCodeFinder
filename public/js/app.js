@@ -1,5 +1,15 @@
 // Global state
 let bootcampsData = [];
+const bootcampCache = new Map();
+
+// Debounce helper
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('bootcamp-grid');
@@ -24,44 +34,74 @@ window.fetchBootcamps = function (page = 1) {
   const reviewsGrid = document.getElementById('reviews-grid');
   const paginationContainer = document.getElementById('pagination-container');
 
-  // Show loading state
-  grid.innerHTML = '<div class="loader-container"><div class="loader"></div></div>';
+  const cacheKey = `page_${page}`;
+
+  // Check cache first
+  if (bootcampCache.has(cacheKey)) {
+    const cached = bootcampCache.get(cacheKey);
+    renderBootcamps(cached.data, cached.pagination, grid, reviewsGrid, paginationContainer);
+    return;
+  }
+
+  // Show skeleton loading state
+  grid.innerHTML = '';
+  for (let i = 0; i < 6; i++) {
+    const skeleton = document.createElement('div');
+    skeleton.className = 'skeleton-card';
+    skeleton.innerHTML = `
+      <div class="skeleton-header"></div>
+      <div class="skeleton-line"></div>
+      <div class="skeleton-line short"></div>
+      <div class="skeleton-line medium"></div>
+    `;
+    grid.appendChild(skeleton);
+  }
 
   fetch(`/api/v1/bootcamps?page=${page}&limit=6`) // Limit to 6 per page
     .then(res => res.json())
     .then(data => {
-      grid.innerHTML = '';
       bootcampsData = data.data;
       const pagination = data.pagination;
 
-      // Handle empty data
-      if (bootcampsData.length === 0) {
-        grid.innerHTML = '<p class="description">No bootcamps found. Be the first to add one!</p>';
-        if (paginationContainer) paginationContainer.innerHTML = '';
-        return;
-      }
+      // Cache the data
+      bootcampCache.set(cacheKey, { data: bootcampsData, pagination });
 
-      // Render Cards
-      bootcampsData.forEach(bootcamp => {
-        const card = createBootcampCard(bootcamp);
-        grid.appendChild(card);
-      });
-
-      // Render Reviews Section
-      renderReviews(bootcampsData, reviewsGrid);
-
-      // Render Pagination
-      renderPagination(pagination, paginationContainer);
+      // Render
+      renderBootcamps(bootcampsData, pagination, grid, reviewsGrid, paginationContainer);
     })
     .catch(err => {
       console.error(err);
       grid.innerHTML = `
-        <div style="grid-column: 1/-1; text-align: center; color: #ff4444;">
+        <div class="error-message">
           <i class="fas fa-exclamation-triangle"></i> 
           Failed to load bootcamps. Is the server running?
         </div>
       `;
     });
+}
+
+// Helper function to render bootcamps
+function renderBootcamps(bootcampsData, pagination, grid, reviewsGrid, paginationContainer) {
+  grid.innerHTML = '';
+
+  // Handle empty data
+  if (bootcampsData.length === 0) {
+    grid.innerHTML = '<p class="description">No bootcamps found. Be the first to add one!</p>';
+    if (paginationContainer) paginationContainer.innerHTML = '';
+    return;
+  }
+
+  // Render Cards
+  bootcampsData.forEach(bootcamp => {
+    const card = createBootcampCard(bootcamp);
+    grid.appendChild(card);
+  });
+
+  // Render Reviews Section
+  renderReviews(bootcampsData, reviewsGrid);
+
+  // Render Pagination
+  renderPagination(pagination, paginationContainer);
 }
 
 function renderPagination(pagination, container) {
@@ -73,7 +113,8 @@ function renderPagination(pagination, container) {
     const prevBtn = document.createElement('button');
     prevBtn.className = 'nav-btn pagination-btn';
     prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i> Prev';
-    prevBtn.addEventListener('click', () => window.fetchBootcamps(pagination.prev.page));
+    const debouncedPrev = debounce(() => window.fetchBootcamps(pagination.prev.page), 300);
+    prevBtn.addEventListener('click', debouncedPrev);
     container.appendChild(prevBtn);
   }
 
@@ -81,7 +122,8 @@ function renderPagination(pagination, container) {
     const nextBtn = document.createElement('button');
     nextBtn.className = 'nav-btn pagination-btn';
     nextBtn.innerHTML = 'Next <i class="fas fa-chevron-right"></i>';
-    nextBtn.addEventListener('click', () => window.fetchBootcamps(pagination.next.page));
+    const debouncedNext = debounce(() => window.fetchBootcamps(pagination.next.page), 300);
+    nextBtn.addEventListener('click', debouncedNext);
     container.appendChild(nextBtn);
   }
 }
@@ -155,7 +197,13 @@ function createBootcampCard(bootcamp) {
   const courseCount = bootcamp.courses ? bootcamp.courses.length : 0;
 
   card.innerHTML = `
-    <img src="${bgImage}" class="card-img" alt="${bootcamp.name}" onerror="this.src='https://via.placeholder.com/700x400/1a1a1a/4ade80?text=Bootcamp'">
+    <img 
+      src="${bgImage}" 
+      class="card-img" 
+      alt="${bootcamp.name}" 
+      loading="lazy"
+      onerror="this.src='https://via.placeholder.com/700x400/1a1a1a/4ade80?text=Bootcamp'"
+    >
     <div class="card-content">
       <h3 class="card-title">${bootcamp.name}</h3>
       <div class="card-location">
