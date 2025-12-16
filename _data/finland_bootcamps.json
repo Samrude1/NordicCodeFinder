@@ -118,5 +118,131 @@
         "jobGuarantee": true,
         "acceptGi": false,
         "photo": "aaron-burden-QJDzYT_K8Xg-unsplash.jpg"
+    },
+    {
+        "_id": "5d725a037b292f5f8ceff791",
+        "user": "5d7a514b5d2c12c7449be052",
+        "name": "Tampere University",
+        "description": "A hub for technology and society. The Hervanta campus is famous for its strong engineering & computer science culture.",
+        "website": "https://www.tuni.fi",
+        "phone": "+358 29 452 11",
+        "email": "admissions.tau@tuni.fi",
+        "address": "Kalevantie 4, 33100 Tampere, Finland",
+        "careers": [
+            "Software Engineering",
+            "Data Science",
+            "AI",
+            "Machine Learning"
+        ],
+        "housing": true,
+        "jobAssistance": true,
+        "jobGuarantee": false,
+        "acceptGi": false,
+        "photo": "image1.jpg"
+    },
+    {
+        "_id": "5d725a037b292f5f8ceff792",
+        "user": "5d7a514b5d2c12c7449be053",
+        "name": "University of Oulu",
+        "description": "Known for wireless communications and AI research. Located in the north, it offers a strong study environment.",
+        "website": "https://www.oulu.fi",
+        "phone": "+358 29 448 0000",
+        "email": "university.of.oulu@oulu.fi",
+        "address": "Pentti Kaiteran katu 1, 90570 Oulu, Finland",
+        "careers": [
+            "Computer Science",
+            "Systems Programming",
+            "AI",
+            "Cybersecurity"
+        ],
+        "housing": true,
+        "jobAssistance": true,
+        "jobGuarantee": false,
+        "acceptGi": false,
+        "photo": "image2.jpg"
+    },
+    {
+        "_id": "5d725a037b292f5f8ceff793",
+        "user": "5d7a514b5d2c12c7449be054",
+        "name": "LUT University",
+        "description": "Focused on clean energy and water, circular economy and sustainable business and technology. Strong Software Engineering programs.",
+        "website": "https://www.lut.fi",
+        "phone": "+358 29 446 2111",
+        "email": "admission@lut.fi",
+        "address": "Yliopistonkatu 34, 53851 Lappeenranta, Finland",
+        "careers": [
+            "Software Engineering",
+            "Data Science",
+            "Business",
+            "Web Development"
+        ],
+        "housing": true,
+        "jobAssistance": true,
+        "jobGuarantee": false,
+        "acceptGi": false,
+        "photo": "image3.jpg"
+    },
+    {
+        "_id": "5d725a037b292f5f8ceff794",
+        "user": "5d7a514b5d2c12c7449be055",
+        "name": "Metropolia UAS",
+        "description": "The largest University of Applied Sciences in Finland. Offers practical ICT degrees with strong industry connections in the capital region.",
+        "website": "https://www.metropolia.fi",
+        "phone": "+358 9 7424 5000",
+        "email": "admissions@metropolia.fi",
+        "address": "Myllypurontie 1, 00920 Helsinki, Finland",
+        "careers": [
+            "Web Development",
+            "Mobile Development",
+            "DevOps",
+            "Cybersecurity"
+        ],
+        "housing": false,
+        "jobAssistance": true,
+        "jobGuarantee": false,
+        "acceptGi": false,
+        "photo": "image4.jpg"
+    },
+    {
+        "_id": "5d725a037b292f5f8ceff795",
+        "user": "5c8a1d5b0190b214360dc033",
+        "name": "Haaga-Helia UAS",
+        "description": "Focused on business and services, with a very popular Business Information Technology program combining IT and business skills.",
+        "website": "https://www.haaga-helia.fi",
+        "phone": "+358 9 329 631",
+        "email": "admissions@haaga-helia.fi",
+        "address": "Ratapihantie 13, 00520 Helsinki, Finland",
+        "careers": [
+            "Web Development",
+            "Business",
+            "ServiceNow",
+            "UI/UX"
+        ],
+        "housing": false,
+        "jobAssistance": true,
+        "jobGuarantee": false,
+        "acceptGi": false,
+        "photo": "image1.jpg"
+    },
+    {
+        "_id": "5d725a037b292f5f8ceff796",
+        "user": "5c8a1d5b0190b214360dc034",
+        "name": "Code Labs Academy",
+        "description": "An international coding school offering flexible online bootcamps in Cyber Security, Data Science, and Web Development.",
+        "website": "https://codelabsacademy.com",
+        "phone": "+49 123 456 789",
+        "email": "hello@codelabsacademy.com",
+        "address": "Eteläesplanadi 24, 00130 Helsinki, Finland",
+        "careers": [
+            "Web Development",
+            "Data Science",
+            "Cybersecurity",
+            "UI/UX"
+        ],
+        "housing": false,
+        "jobAssistance": true,
+        "jobGuarantee": false,
+        "acceptGi": false,
+        "photo": "image2.jpg"
     }
 ]

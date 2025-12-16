@@ -23,7 +23,7 @@ const courses = JSON.parse(
   fs.readFileSync(`${__dirname}/_data/finland_courses.json`, "utf-8")
 );
 const users = JSON.parse(
-  fs.readFileSync(`${__dirname}/_data/users.json`, "utf-8")
+  fs.readFileSync(`${__dirname}/_data/finland_users.json`, "utf-8")
 );
 const reviews = JSON.parse(
   fs.readFileSync(`${__dirname}/_data/finland_reviews.json`, "utf-8")

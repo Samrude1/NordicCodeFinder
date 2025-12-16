@@ -1,7 +1,7 @@
-# DevCamper (2025)
+# NordicCode (2025)
 
-**Full Stack Bootcamp Directory Application**  
-A comprehensive platform comprising a robust RESTful backend API and a modern, responsive frontend user interface. It allows users to browse, search, and review coding bootcamps/courses, with full authentication and role-based access control.
+**Finland's Premier Code School Directory**  
+A comprehensive platform comprising a robust RESTful backend API and a modern, responsive frontend user interface. It allows users to browse, search, and review Finnish coding bootcamps/universities, with full authentication and role-based access control.
 
 ---
 
@@ -48,7 +48,7 @@ A comprehensive platform comprising a robust RESTful backend API and a modern, r
 1.  **Clone the repository**:
     ```bash
     git clone <repository-url>
-    cd devcamper_api
+    cd nordiccode_api
     ```
 2.  **Install Dependencies**:
     *   This installs all backend libraries and development tools like `nodemon`.

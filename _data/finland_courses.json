@@ -97,5 +97,71 @@
         "scholarhipsAvailable": false,
         "bootcamp": "5d725a037b292f5f8ceff790",
         "user": "5d7a514b5d2c12c7449be051"
+    },
+    {
+        "_id": "5d725cd2c4ded7bcb480eaa5",
+        "title": "Master of Computing Sciences",
+        "description": "Specializations in Human-Technology Interaction, Machine Learning, and Software Engineering.",
+        "weeks": 104,
+        "tuition": 12000,
+        "minimumSkill": "intermediate",
+        "scholarhipsAvailable": true,
+        "bootcamp": "5d725a037b292f5f8ceff791",
+        "user": "5d7a514b5d2c12c7449be052"
+    },
+    {
+        "_id": "5d725cd2c4ded7bcb480eaa6",
+        "title": "MSc Computer Science and Engineering",
+        "description": "Focus on AI, systems engineering, and wireless comms giving a strong theoretical and practical base.",
+        "weeks": 104,
+        "tuition": 10000,
+        "minimumSkill": "intermediate",
+        "scholarhipsAvailable": true,
+        "bootcamp": "5d725a037b292f5f8ceff792",
+        "user": "5d7a514b5d2c12c7449be053"
+    },
+    {
+        "_id": "5d725cd2c4ded7bcb480eaa7",
+        "title": "Software Engineering MSc",
+        "description": "Solving real-world problems using software. Focuses on sustainable software development.",
+        "weeks": 104,
+        "tuition": 13500,
+        "minimumSkill": "intermediate",
+        "scholarhipsAvailable": true,
+        "bootcamp": "5d725a037b292f5f8ceff793",
+        "user": "5d7a514b5d2c12c7449be054"
+    },
+    {
+        "_id": "5d725cd2c4ded7bcb480eaa8",
+        "title": "Information Technology BEng",
+        "description": "A comprehensive bachelor's degree covering networking, cloud, and IoT.",
+        "weeks": 160,
+        "tuition": 11000,
+        "minimumSkill": "beginner",
+        "scholarhipsAvailable": true,
+        "bootcamp": "5d725a037b292f5f8ceff794",
+        "user": "5d7a514b5d2c12c7449be055"
+    },
+    {
+        "_id": "5d725cd2c4ded7bcb480eaa9",
+        "title": "Business Information Technology",
+        "description": "Combine business know-how with modern IT skills. Very popular in Helsinki.",
+        "weeks": 150,
+        "tuition": 11000,
+        "minimumSkill": "beginner",
+        "scholarhipsAvailable": true,
+        "bootcamp": "5d725a037b292f5f8ceff795",
+        "user": "5c8a1d5b0190b214360dc033"
+    },
+    {
+        "_id": "5d725cd2c4ded7bcb480eab0",
+        "title": "Cyber Security Bootcamp",
+        "description": "Intensive online training to become a junior penetration tester or security analyst.",
+        "weeks": 12,
+        "tuition": 6000,
+        "minimumSkill": "beginner",
+        "scholarhipsAvailable": true,
+        "bootcamp": "5d725a037b292f5f8ceff796",
+        "user": "5c8a1d5b0190b214360dc034"
     }
 ]

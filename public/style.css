@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --primary: #0070f3;
   --primary-glow: rgba(0, 112, 243, 0.4);
@@ -7,6 +11,16 @@
   --text-muted: #888888;
   --border: rgba(255, 255, 255, 0.1);
   --font-family: 'Outfit', sans-serif;
+}
+
+/* ... existing content ... */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    max-height: 80vh;
+    border-radius: 12px;
+    margin: 0 auto;
+  }
 }
 
 html,

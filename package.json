@@ -1,7 +1,7 @@
 {
-  "name": "devcamper_api",
+  "name": "nordiccode_api",
   "version": "1.0.0",
-  "description": "devcamper backend API",
+  "description": "NordicCode backend API",
   "license": "MIT",
   "author": "Sami Rautanen",
   "type": "commonjs",

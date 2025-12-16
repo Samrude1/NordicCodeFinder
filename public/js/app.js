@@ -247,6 +247,10 @@ function createBootcampCard(bootcamp) {
 
   const courseCount = bootcamp.courses ? bootcamp.courses.length : 0;
 
+  // Check if it's a University or UAS for the price note
+  const isUniversity = bootcamp.name.includes('University') || bootcamp.name.includes('UAS');
+  const priceSuffix = isUniversity && bootcamp.averageCost ? '<span style="font-size:0.7em; color:#999; margin-left:4px;">(Non-EU)</span>' : '';
+
   card.innerHTML = `
     <img 
       src="${bgImage}" 
@@ -278,6 +282,7 @@ function createBootcampCard(bootcamp) {
         </span>
         <span class="price-tag">
            ${bootcamp.averageCost ? '$' + bootcamp.averageCost : 'Free'}
+           ${priceSuffix}
         </span>
       </div>
       <button class="nav-btn-primary view-details-btn btn-details" data-bootcamp-id="${bootcamp._id}">
