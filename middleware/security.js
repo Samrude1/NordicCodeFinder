@@ -46,7 +46,7 @@ const securityMiddleware = (app) => {
   // Optional: separate stricter limiter for login route
   const loginLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
-    max: 5,
+    max: 50, // Increased for testing
     message: {
       success: false,
       error: "Too many login attempts, try again after 15 minutes",

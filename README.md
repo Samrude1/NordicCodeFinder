@@ -85,3 +85,20 @@ A comprehensive platform comprising a robust RESTful backend API and a modern, r
 - **`nodemon` not found**: Ensure you ran `npm install`. If it persists, try installing globally: `npm install -g nodemon`.
 - **MongoDB connection error**: Ensure your local MongoDB service is running or your Atlas URI is correct in `config.env`.
 
+📘 **For more issues, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md)**
+
+---
+
+## Test Credentials
+
+| Email | Password | Role |
+|-------|----------|------|
+| `admin@gmail.com` | `123456` | Admin |
+| `publisher@gmail.com` | `123456` | Publisher |
+| `user@gmail.com` | `123456` | User |
+
+---
+
+## License
+
+MIT © 2025 Sami Rautanen
