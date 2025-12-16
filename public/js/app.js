@@ -1,5 +1,8 @@
 // Global state
 let bootcampsData = [];
+let allReviewsData = [];  // Store all reviews for pagination
+let currentReviewPage = 1;
+const REVIEWS_PER_PAGE = 6;
 const bootcampCache = new Map();
 
 // Debounce helper
@@ -53,6 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Fetch Bootcamps (now includes courses and reviews)
   fetchBootcamps();
+
+  // Fetch ALL reviews separately for the reviews section
+  fetchAllReviews();
 
   // Modal Close Logic
   document.querySelector('.close-modal').addEventListener('click', closeModal);
@@ -117,6 +123,29 @@ window.fetchBootcamps = function (page = 1) {
     });
 }
 
+// Fetch ALL reviews for the reviews section (independent of bootcamp pagination)
+function fetchAllReviews() {
+  const reviewsGrid = document.getElementById('reviews-grid');
+
+  fetch('/api/v1/reviews?limit=100') // Get all reviews
+    .then(res => res.json())
+    .then(data => {
+      if (data.success && data.data) {
+        allReviewsData = data.data.map(review => ({
+          ...review,
+          bootcampName: review.bootcamp ? review.bootcamp.name : 'Unknown'
+        }));
+        console.log('Fetched reviews:', allReviewsData.length, 'Total pages:', Math.ceil(allReviewsData.length / REVIEWS_PER_PAGE));
+        currentReviewPage = 1;
+        renderReviewPage(reviewsGrid);
+      }
+    })
+    .catch(err => {
+      console.error('Failed to fetch reviews:', err);
+      reviewsGrid.innerHTML = '<p class="no-reviews-msg">Failed to load reviews.</p>';
+    });
+}
+
 // Helper function to render bootcamps
 function renderBootcamps(bootcampsData, pagination, grid, reviewsGrid, paginationContainer) {
   grid.innerHTML = '';
@@ -134,10 +163,7 @@ function renderBootcamps(bootcampsData, pagination, grid, reviewsGrid, paginatio
     grid.appendChild(card);
   });
 
-  // Render Reviews Section
-  renderReviews(bootcampsData, reviewsGrid);
-
-  // Render Pagination
+  // Render Pagination (Reviews are fetched separately now)
   renderPagination(pagination, paginationContainer);
 }
 
@@ -309,31 +335,40 @@ function createBootcampCard(bootcamp) {
 }
 
 function renderReviews(bootcamps, container) {
-  // Aggregate all reviews
-  let allReviews = [];
+  // Aggregate all reviews (only on first load or when bootcamps change)
+  allReviewsData = [];
   bootcamps.forEach(b => {
     if (b.reviews) {
       b.reviews.forEach(r => {
-        // Add bootcamp name to review for context
         r.bootcampName = b.name;
-        allReviews.push(r);
+        allReviewsData.push(r);
       });
     }
   });
 
-  // Shuffle reviews randomly
-  allReviews.sort(() => Math.random() - 0.5);
+  // Shuffle reviews randomly (but consistently per session)
+  allReviewsData.sort((a, b) => a._id > b._id ? 1 : -1);
 
-  // Take only 6 reviews
-  const selectedReviews = allReviews.slice(0, 6);
+  // Reset to page 1
+  currentReviewPage = 1;
+  renderReviewPage(container);
+}
 
-  if (selectedReviews.length === 0) {
+function renderReviewPage(container) {
+  const paginationContainer = document.getElementById('reviews-pagination');
+  const totalPages = Math.ceil(allReviewsData.length / REVIEWS_PER_PAGE);
+  const startIndex = (currentReviewPage - 1) * REVIEWS_PER_PAGE;
+  const endIndex = startIndex + REVIEWS_PER_PAGE;
+  const pageReviews = allReviewsData.slice(startIndex, endIndex);
+
+  if (allReviewsData.length === 0) {
     container.innerHTML = '<p class="no-reviews-msg">No reviews yet.</p>';
+    if (paginationContainer) paginationContainer.innerHTML = '';
     return;
   }
 
   container.innerHTML = '';
-  selectedReviews.forEach(review => {
+  pageReviews.forEach(review => {
     const card = document.createElement('div');
     card.className = 'review-card';
     card.innerHTML = `
@@ -346,6 +381,50 @@ function renderReviews(bootcamps, container) {
     `;
     container.appendChild(card);
   });
+
+  // Render pagination only if more than one page
+  if (paginationContainer && totalPages > 1) {
+    paginationContainer.innerHTML = '';
+
+    if (currentReviewPage > 1) {
+      const prevBtn = document.createElement('button');
+      prevBtn.className = 'nav-btn pagination-btn';
+      prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i> Prev';
+      prevBtn.addEventListener('click', () => {
+        currentReviewPage--;
+        renderReviewPage(container);
+        scrollToReviews();
+      });
+      paginationContainer.appendChild(prevBtn);
+    }
+
+    // Page indicator
+    const pageInfo = document.createElement('span');
+    pageInfo.className = 'page-info';
+    pageInfo.textContent = `${currentReviewPage} / ${totalPages}`;
+    paginationContainer.appendChild(pageInfo);
+
+    if (currentReviewPage < totalPages) {
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'nav-btn pagination-btn';
+      nextBtn.innerHTML = 'Next <i class="fas fa-chevron-right"></i>';
+      nextBtn.addEventListener('click', () => {
+        currentReviewPage++;
+        renderReviewPage(container);
+        scrollToReviews();
+      });
+      paginationContainer.appendChild(nextBtn);
+    }
+  } else if (paginationContainer) {
+    paginationContainer.innerHTML = '';
+  }
+}
+
+function scrollToReviews() {
+  const reviewsHeader = document.querySelector('.reviews-section-header');
+  if (reviewsHeader) {
+    reviewsHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
 // Global scope for onclick
