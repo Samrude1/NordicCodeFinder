@@ -110,5 +110,13 @@
         "text": "Good online option if you can't move to Helsinki. Flexible schedule, but you need to be self-motivated.",
         "rating": 7,
         "title": "Code Labs Academy: Flexible online option"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be01f",
+        "bootcamp": "5d725a037b292f5f8ceff797",
+        "user": "5d7a514b5d2c12c7449be056",
+        "text": "The software developer line at Careeria Tikkurila is very hands-on. We use real tools like Visual Studio and Unity. It's relaxed but you learn a lot.",
+        "rating": 9,
+        "title": "Careeria: Practical coding studies"
     }
 ]

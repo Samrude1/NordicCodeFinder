@@ -110,6 +110,28 @@
         "user": "5d7a514b5d2c12c7449be052"
     },
     {
+        "_id": "5d725cd2c4ded7bcb480eab1",
+        "title": "Vocational Qualification in ICT (Software Developer)",
+        "description": "Become a Software Developer. Learn programming (C#, JS, Python), game development, and modern software practices.",
+        "weeks": 80,
+        "tuition": 0,
+        "minimumSkill": "beginner",
+        "scholarhipsAvailable": false,
+        "bootcamp": "5d725a037b292f5f8ceff797",
+        "user": "5d7a514b5d2c12c7449be056"
+    },
+    {
+        "_id": "5d725cd2c4ded7bcb480eab2",
+        "title": "Vocational Qualification in ICT (IT Support)",
+        "description": "Specialization in IT Support. Learn to manage networks, servers, and provide technical user support.",
+        "weeks": 80,
+        "tuition": 0,
+        "minimumSkill": "beginner",
+        "scholarhipsAvailable": false,
+        "bootcamp": "5d725a037b292f5f8ceff797",
+        "user": "5d7a514b5d2c12c7449be056"
+    },
+    {
         "_id": "5d725cd2c4ded7bcb480eaa6",
         "title": "MSc Computer Science and Engineering",
         "description": "Focus on AI, systems engineering, and wireless comms giving a strong theoretical and practical base.",
