@@ -228,17 +228,21 @@ function createBootcampCard(bootcamp) {
   card.className = 'bootcamp-card';
 
   // Map bootcamp IDs to specific images - each bootcamp gets its own unique image
+  // 13 schools = 13 unique images
   const imageMap = {
-    '5d713995b721c3bb38c1f5d0': '/uploads/image1.jpg', // Devworks
-    '5d713a66ec8f2b88b8f830b8': '/uploads/image2.jpg', // ModernTech
-    '5d725a037b292f5f8ceff787': '/uploads/image3.jpg', // Codemasters
-    '5d725a1b7b292f5f8ceff788': '/uploads/image4.jpg', // Devcentral
-    '5d725a037b292f5f8ceff789': '/uploads/aaron-burden-LNwn_A9RGHo-unsplash.jpg', // Quantum
-    '5d725a037b292f5f8ceff790': '/uploads/aaron-burden-QJDzYT_K8Xg-unsplash.jpg', // Pixel
-    '5d725a037b292f5f8ceff791': '/uploads/iewek-gnos-hhUx08PuYpc-unsplash.jpg', // Cloud
-    '5d725a037b292f5f8ceff792': '/uploads/jeshoots-com-pUAM5hPaCRI-unsplash.jpg', // Mobile
-    '5d725a037b292f5f8ceff793': '/uploads/marvin-meyer-SYTO3xs06fU-unsplash.jpg', // Cyber
-    '5d725a037b292f5f8ceff794': '/uploads/thought-catalog-505eectW54k-unsplash.jpg' // Agile
+    '5d713995b721c3bb38c1f5d0': '/uploads/image1.jpg', // Hive Helsinki
+    '5d713a66ec8f2b88b8f830b8': '/uploads/image2.jpg', // Integrify
+    '5d725a037b292f5f8ceff787': '/uploads/image3.jpg', // Aalto University
+    '5d725a1b7b292f5f8ceff788': '/uploads/image4.jpg', // Omnia
+    '5d725a037b292f5f8ceff789': '/uploads/aaron-burden-LNwn_A9RGHo-unsplash.jpg', // University of Helsinki
+    '5d725a037b292f5f8ceff790': '/uploads/aaron-burden-QJDzYT_K8Xg-unsplash.jpg', // Buutti
+    '5d725a037b292f5f8ceff791': '/uploads/chris-ried-ieic5Tq8YMk-unsplash.jpg', // Tampere University
+    '5d725a037b292f5f8ceff792': '/uploads/florian-olivo-4hbJ-eymZ1o-unsplash.jpg', // University of Oulu
+    '5d725a037b292f5f8ceff793': '/uploads/iewek-gnos-hhUx08PuYpc-unsplash.jpg', // LUT University
+    '5d725a037b292f5f8ceff794': '/uploads/ilya-pavlov-OqtafYT5kTw-unsplash.jpg', // Metropolia UAS
+    '5d725a037b292f5f8ceff795': '/uploads/jeshoots-com-pUAM5hPaCRI-unsplash.jpg', // Haaga-Helia UAS
+    '5d725a037b292f5f8ceff796': '/uploads/markus-spiske-iar-afB0QQw-unsplash.jpg', // Code Labs Academy
+    '5d725a037b292f5f8ceff797': '/uploads/marvin-meyer-SYTO3xs06fU-unsplash.jpg' // Careeria
   };
 
   const bgImage = bootcamp.photo && bootcamp.photo !== 'no-photo.jpg'
@@ -249,7 +253,7 @@ function createBootcampCard(bootcamp) {
 
   // Check if it's a University or UAS for the price note
   const isUniversity = bootcamp.name.includes('University') || bootcamp.name.includes('UAS');
-  const priceSuffix = isUniversity && bootcamp.averageCost ? '<span style="font-size:0.7em; color:#999; margin-left:4px;">(Non-EU)</span>' : '';
+  const priceSuffix = isUniversity && bootcamp.averageCost ? '<span class="non-eu-label">(Non-EU)</span>' : '';
 
   card.innerHTML = `
     <img 

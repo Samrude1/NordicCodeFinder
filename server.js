@@ -8,6 +8,7 @@ const fileupload = require("express-fileupload");
 const errorHandler = require("./middleware/error");
 const cookieParser = require("cookie-parser");
 const securityMiddleware = require("./middleware/security");
+const compression = require("compression"); // Added compression
 
 // Ladataan ympäristömuuttujat config.env-tiedostosta
 dotenv.config({ path: "./config/config.env" });
@@ -23,6 +24,9 @@ const users = require("./routes/users");
 const reviews = require("./routes/reviews");
 
 const app = express();
+
+// Compress all responses
+app.use(compression());
 
 // Body parser
 app.use(express.json());

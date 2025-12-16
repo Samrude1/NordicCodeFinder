@@ -1,7 +1,7 @@
 # NordicCode (2025)
 
 **Finland's Premier Code School Directory**  
-A comprehensive platform comprising a robust RESTful backend API and a modern, responsive frontend user interface. It allows users to browse, search, and review Finnish coding bootcamps/universities, with full authentication and role-based access control.
+A comprehensive platform comprising a robust RESTful backend API and a modern, responsive frontend user interface. It allows users to browse details for **13 top Finnish institutions** (Universities, UAS, Vocational Colleges, and Bootcamps), with clear tuition info (Free vs Non-EU).
 
 ---
 
@@ -23,6 +23,10 @@ A comprehensive platform comprising a robust RESTful backend API and a modern, r
   - JWT Authentication & Role-based Authorization (User/Publisher/Admin).
   - Security headers (Helmet), CORS enabled, Rate Limiting, and XSS sanitization.
   - Image upload capabilities with validation.
+  - **Performance**:
+    - Gzip compression enabled for all responses.
+    - Optimized assets and lazy-loading for fast LCP (Largest Contentful Paint).
+    - Native Skeleton screens for better perceived performance.
 
 ---
 

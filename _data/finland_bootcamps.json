@@ -17,7 +17,7 @@
         "housing": false,
         "jobAssistance": true,
         "jobGuarantee": false,
-        "acceptGi": false
+        "photo": "image1.jpg"
     },
     {
         "_id": "5d713a66ec8f2b88b8f830b8",
@@ -37,7 +37,7 @@
         "housing": false,
         "jobAssistance": true,
         "jobGuarantee": true,
-        "acceptGi": false
+        "photo": "image2.jpg"
     },
     {
         "_id": "5d725a037b292f5f8ceff787",
@@ -57,7 +57,8 @@
         "housing": true,
         "jobAssistance": true,
         "jobGuarantee": false,
-        "acceptGi": false
+        "acceptGi": false,
+        "photo": "image3.jpg"
     },
     {
         "_id": "5d725a1b7b292f5f8ceff788",
@@ -76,7 +77,8 @@
         "housing": false,
         "jobAssistance": true,
         "jobGuarantee": false,
-        "acceptGi": false
+        "acceptGi": false,
+        "photo": "image4.jpg"
     },
     {
         "_id": "5d725a037b292f5f8ceff789",
@@ -138,7 +140,7 @@
         "jobAssistance": true,
         "jobGuarantee": false,
         "acceptGi": false,
-        "photo": "image1.jpg"
+        "photo": "chris-ried-ieic5Tq8YMk-unsplash.jpg"
     },
     {
         "_id": "5d725a037b292f5f8ceff792",
@@ -159,7 +161,7 @@
         "jobAssistance": true,
         "jobGuarantee": false,
         "acceptGi": false,
-        "photo": "image2.jpg"
+        "photo": "florian-olivo-4hbJ-eymZ1o-unsplash.jpg"
     },
     {
         "_id": "5d725a037b292f5f8ceff793",
@@ -180,7 +182,7 @@
         "jobAssistance": true,
         "jobGuarantee": false,
         "acceptGi": false,
-        "photo": "image3.jpg"
+        "photo": "iewek-gnos-hhUx08PuYpc-unsplash.jpg"
     },
     {
         "_id": "5d725a037b292f5f8ceff794",
@@ -201,7 +203,7 @@
         "jobAssistance": true,
         "jobGuarantee": false,
         "acceptGi": false,
-        "photo": "image4.jpg"
+        "photo": "ilya-pavlov-OqtafYT5kTw-unsplash.jpg"
     },
     {
         "_id": "5d725a037b292f5f8ceff795",
@@ -222,7 +224,7 @@
         "jobAssistance": true,
         "jobGuarantee": false,
         "acceptGi": false,
-        "photo": "image1.jpg"
+        "photo": "jeshoots-com-pUAM5hPaCRI-unsplash.jpg"
     },
     {
         "_id": "5d725a037b292f5f8ceff796",
@@ -243,7 +245,7 @@
         "jobAssistance": true,
         "jobGuarantee": false,
         "acceptGi": false,
-        "photo": "image2.jpg"
+        "photo": "markus-spiske-iar-afB0QQw-unsplash.jpg"
     },
     {
         "_id": "5d725a037b292f5f8ceff797",
@@ -263,6 +265,6 @@
         "jobAssistance": true,
         "jobGuarantee": false,
         "acceptGi": false,
-        "photo": "image2.jpg"
+        "photo": "marvin-meyer-SYTO3xs06fU-unsplash.jpg"
     }
 ]
