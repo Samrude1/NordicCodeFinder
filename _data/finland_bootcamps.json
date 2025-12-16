@@ -1,0 +1,122 @@
+[
+    {
+        "_id": "5d713995b721c3bb38c1f5d0",
+        "user": "5d7a514b5d2c12c7449be045",
+        "name": "Hive Helsinki",
+        "description": "Hive Helsinki is a tuition-free coding school that operates without teachers, classes, or textbooks. It relies on a peer-to-peer learning model where students learn from each other and solve practical problems.",
+        "website": "https://www.hive.fi",
+        "phone": "+358 123 4567",
+        "email": "info@hive.fi",
+        "address": "Haapaniemenkatu 7-9, 00530 Helsinki, Finland",
+        "careers": [
+            "Software Engineering",
+            "Web Development",
+            "Algorithms",
+            "Systems Programming"
+        ],
+        "housing": false,
+        "jobAssistance": true,
+        "jobGuarantee": false,
+        "acceptGi": false
+    },
+    {
+        "_id": "5d713a66ec8f2b88b8f830b8",
+        "user": "5d7a514b5d2c12c7449be046",
+        "name": "Integrify",
+        "description": "Integrify offers an intensive Full Stack Developer program and Data Science training. They connect graduates with companies in Finland and Europe.",
+        "website": "https://www.integrify.io",
+        "phone": "+358 40 1234567",
+        "email": "admissions@integrify.io",
+        "address": "Salmisaarenaukio 1, 00180 Helsinki, Finland",
+        "careers": [
+            "Web Development",
+            "Data Science",
+            "Machine Learning",
+            "DevOps"
+        ],
+        "housing": false,
+        "jobAssistance": true,
+        "jobGuarantee": true,
+        "acceptGi": false
+    },
+    {
+        "_id": "5d725a037b292f5f8ceff787",
+        "user": "5c8a1d5b0190b214360dc031",
+        "name": "Aalto University",
+        "description": "Aalto University is a multidisciplinary community. The Department of Computer Science offers world-class education in software engineering, AI, and more.",
+        "website": "https://www.aalto.fi",
+        "phone": "+358 9 47001",
+        "email": "admissions@aalto.fi",
+        "address": "Otakaari 24, 02150 Espoo, Finland",
+        "careers": [
+            "Software Engineering",
+            "Data Science",
+            "AI",
+            "Cybersecurity"
+        ],
+        "housing": true,
+        "jobAssistance": true,
+        "jobGuarantee": false,
+        "acceptGi": false
+    },
+    {
+        "_id": "5d725a1b7b292f5f8ceff788",
+        "user": "5c8a1d5b0190b214360dc032",
+        "name": "Business College Helsinki",
+        "description": "Offers a vocational qualification in Information and Communications Technology. Focuses on practical coding skills, web development, and game development.",
+        "website": "https://bc.fi",
+        "phone": "+358 9 1489 0200",
+        "email": "info@bc.fi",
+        "address": "Rautatieläisenkatu 5, 00520 Helsinki, Finland",
+        "careers": [
+            "Web Development",
+            "Game Development",
+            "Cybersecurity"
+        ],
+        "housing": false,
+        "jobAssistance": true,
+        "jobGuarantee": false,
+        "acceptGi": false
+    },
+    {
+        "_id": "5d725a037b292f5f8ceff789",
+        "user": "5d7a514b5d2c12c7449be050",
+        "name": "University of Helsinki",
+        "description": "The oldest and largest university in Finland. Known for its high-quality Computer Science department and the famous 'Full Stack Open' MOOC.",
+        "website": "https://www.helsinki.fi",
+        "phone": "+358 29 41911",
+        "email": "admissions@helsinki.fi",
+        "address": "Yliopistonkatu 4, 00100 Helsinki, Finland",
+        "careers": [
+            "Computer Science",
+            "Data Science",
+            "Software Engineering"
+        ],
+        "housing": true,
+        "jobAssistance": true,
+        "jobGuarantee": false,
+        "acceptGi": false,
+        "photo": "aaron-burden-LNwn_A9RGHo-unsplash.jpg"
+    },
+    {
+        "_id": "5d725a037b292f5f8ceff790",
+        "user": "5d7a514b5d2c12c7449be051",
+        "name": "AW Academy Finland",
+        "description": "Offers intensive 12-week training programs in various tech tracks directly tailored to the needs of the job market.",
+        "website": "https://www.awacademy.fi",
+        "phone": "+358 50 123 9999",
+        "email": "info@awacademy.fi",
+        "address": "Keilaranta 1, 02150 Espoo, Finland",
+        "careers": [
+            "Java Development",
+            "C# .NET",
+            "ServiceNow",
+            "Data Engineering"
+        ],
+        "housing": false,
+        "jobAssistance": true,
+        "jobGuarantee": true,
+        "acceptGi": false,
+        "photo": "aaron-burden-QJDzYT_K8Xg-unsplash.jpg"
+    }
+]

@@ -17,16 +17,16 @@ mongoose.connect(process.env.MONGO_URI);
 
 // read JSON files
 const bootcamps = JSON.parse(
-  fs.readFileSync(`${__dirname}/_data/bootcamps.json`, "utf-8")
+  fs.readFileSync(`${__dirname}/_data/finland_bootcamps.json`, "utf-8")
 );
 const courses = JSON.parse(
-  fs.readFileSync(`${__dirname}/_data/courses.json`, "utf-8")
+  fs.readFileSync(`${__dirname}/_data/finland_courses.json`, "utf-8")
 );
 const users = JSON.parse(
   fs.readFileSync(`${__dirname}/_data/users.json`, "utf-8")
 );
 const reviews = JSON.parse(
-  fs.readFileSync(`${__dirname}/_data/reviews.json`, "utf-8")
+  fs.readFileSync(`${__dirname}/_data/finland_reviews.json`, "utf-8")
 );
 
 // import into db

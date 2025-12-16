@@ -258,7 +258,7 @@ function createBootcampCard(bootcamp) {
     <div class="card-content">
       <h3 class="card-title">${bootcamp.name}</h3>
       <div class="card-location">
-        <i class="fas fa-map-marker-alt"></i> ${bootcamp.location.city}, ${bootcamp.location.country || 'USA'}
+        <i class="fas fa-map-marker-alt"></i> ${bootcamp.location.city}, ${bootcamp.location.country || 'Finland'}
       </div>
       <p class="card-desc">${bootcamp.description.substring(0, 90)}...</p>
       

@@ -1,0 +1,66 @@
+[
+    {
+        "_id": "5d7a514b5d2c12c7449be010",
+        "bootcamp": "5d713995b721c3bb38c1f5d0",
+        "user": "5d7a514b5d2c12c7449be045",
+        "text": "The Hive Piscine was the most intense month of my life. 12 hours a day coding, but the community is amazing. It's truly peer-to-peer, no teachers telling you what to do. If you survive the pool, the main curriculum gives you freedom.",
+        "rating": 9,
+        "title": "Hive Helsinki: Intense but rewarding"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be011",
+        "bootcamp": "5d713995b721c3bb38c1f5d0",
+        "user": "5d7a514b5d2c12c7449be046",
+        "text": "It's free, which is incredible for Finland. But be warned, the 'no teachers' style isn't for everyone. You need to be very self-disciplined.",
+        "rating": 8,
+        "title": "Hive Helsinki: Great model if you are self-driven"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be012",
+        "bootcamp": "5d713a66ec8f2b88b8f830b8",
+        "user": "5d7a514b5d2c12c7449be010",
+        "text": "Integrify helped me switch careers from sales to tech in 6 months. The instruction quality is high and they really push you to get hired. They have good connections with Finnish tech companies.",
+        "rating": 10,
+        "title": "Integrify: Landed a job in 2 months!"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be013",
+        "bootcamp": "5d713a66ec8f2b88b8f830b8",
+        "user": "5d7a514b5d2c12c7449be011",
+        "text": "Expensive if you look at the raw price (~12k), but the deal is you only pay if you get a job. Fair trade. The pace is fast, we covered React, Node, and TypeScript very quickly.",
+        "rating": 9,
+        "title": "Integrify: Fast paced professional training"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be014",
+        "bootcamp": "5d725a037b292f5f8ceff787",
+        "user": "5d7a514b5d2c12c7449be012",
+        "text": "Aalto is world-class. The CS department is huge and the startup sauna atmosphere is unique in Europe. It's more theoretical than a bootcamp, obviously, but gives you a solid foundation for life.",
+        "rating": 10,
+        "title": "Aalto University: Top tier university experience"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be015",
+        "bootcamp": "5d725a037b292f5f8ceff789",
+        "user": "5d7a514b5d2c12c7449be013",
+        "text": "Full Stack Open is the best free resource on the internet, period. I did it at my own pace while working. It's challenging and updated every year. Highly recommend for learning modern React.",
+        "rating": 10,
+        "title": "Full Stack Open: Best free course available"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be016",
+        "bootcamp": "5d725a1b7b292f5f8ceff788",
+        "user": "5d7a514b5d2c12c7449be014",
+        "text": "Business College Helsinki is a vocational school, so it's very practical. Good teachers, free for residents. The game dev track is pretty cool.",
+        "rating": 8,
+        "title": "Business College Helsinki: Practical and free"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be017",
+        "bootcamp": "5d725a037b292f5f8ceff790",
+        "user": "5d7a514b5d2c12c7449be015",
+        "text": "12 weeks of hell (in a good way). AW Academy crams huge amounts of info. You are guaranteed a job, but you are bound to their contract for 2 years. Read the fine print.",
+        "rating": 7,
+        "title": "AW Academy: Intensive and guaranteed job, but strings attached"
+    }
+]
