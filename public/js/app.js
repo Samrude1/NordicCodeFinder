@@ -15,6 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('bootcamp-grid');
   const reviewsGrid = document.getElementById('reviews-grid');
 
+  // Event Delegation for View Details (More robust for dynamic content)
+  grid.addEventListener('click', (e) => {
+    const btn = e.target.closest('.view-details-btn');
+    if (btn) {
+      const bootcampId = btn.dataset.bootcampId;
+      openDetails(bootcampId);
+    }
+  });
+
   // Hamburger Menu Toggle
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
@@ -66,6 +75,7 @@ window.fetchBootcamps = function (page = 1) {
   // Check cache first
   if (bootcampCache.has(cacheKey)) {
     const cached = bootcampCache.get(cacheKey);
+    bootcampsData = cached.data;  // IMPORTANT: Update global state for openDetails
     renderBootcamps(cached.data, cached.pagination, grid, reviewsGrid, paginationContainer);
     return;
   }
@@ -294,10 +304,6 @@ function createBootcampCard(bootcamp) {
       </button>
     </div>
   `;
-
-  // Add click event listener to the button
-  const detailsBtn = card.querySelector('.view-details-btn');
-  detailsBtn.addEventListener('click', () => openDetails(bootcamp._id));
 
   return card;
 }
