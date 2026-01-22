@@ -18,7 +18,7 @@ exports.getBootcamps = asyncHandler(async (req, res, next) => {
 // @route   GET /api/v1/bootcamps/:id
 // @access  Public
 exports.getBootcamp = asyncHandler(async (req, res, next) => {
-  const bootcamp = await Bootcamp.findById(req.params.id);
+  const bootcamp = await Bootcamp.findById(req.params.id).lean();
 
   if (!bootcamp) {
     return next(
@@ -136,7 +136,7 @@ exports.getBootcampsInRadius = asyncHandler(async (req, res, next) => {
         $centerSphere: [[lng, lat], radius],
       },
     },
-  });
+  }).lean();
 
   res.status(200).json({
     success: true,
