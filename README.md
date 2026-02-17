@@ -386,7 +386,7 @@ PORT=5000
 # Database
 MONGO_URI=mongodb://localhost:27017/nordiccode
 # OR for MongoDB Atlas:
-# MONGO_URI=mongodb+srv://username:password@cluster0.mongodb.net/nordiccode?retryWrites=true&w=majority
+# MONGO_URI=mongodb+srv://<your_username>:<your_password>@cluster0.mongodb.net/nordiccode?retryWrites=true&w=majority
 
 # File Upload
 FILE_UPLOAD_PATH=./public/uploads
